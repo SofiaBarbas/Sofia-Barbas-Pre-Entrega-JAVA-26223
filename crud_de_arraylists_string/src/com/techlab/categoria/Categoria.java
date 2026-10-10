@@ -1,4 +1,4 @@
-package com.techlab.articulo.model;
+package com.techlab.categoria;
 
 /*
  * CLASE CATEGORIA
@@ -6,18 +6,20 @@ package com.techlab.articulo.model;
  * En esta clase no hay cambios conceptuales grandes respecto de la clase anterior.
  * Sigue siendo un objeto que luego se asigna a los artículos.
  */
+
 public class Categoria {
 
     private int codigo;
     private String nombre;
     private String descripcion;
 
+    //constructor
     public Categoria(int codigo, String nombre, String descripcion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
-
+    
     public int getCodigo() {
         return codigo;
     }

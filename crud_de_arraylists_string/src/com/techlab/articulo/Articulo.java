@@ -1,26 +1,16 @@
-package com.techlab.articulo.model;
+package com.techlab.articulo;
+import com.techlab.categoria.Categoria;
 
 /*
  * CLASE ABSTRACTA ARTICULO
  * --------------------------------------------------
- * Esta clase ahora es ABSTRACTA.
- *
- * ¿Qué significa abstracta?
- * Que no se puede crear un objeto directamente con:
- * new Articulo(...)
- * sirve de plantilla para que otras clases hijas que concreten su implementación.
- *
- * ¿Por qué?
- * Porque queremos que todo artículo real sea de un tipo concreto:
- * - ArticuloElectronico
- * - ArticuloAlimenticio
- *
  * Esta clase contiene:
  * - lo común a todos los artículos
  * - atributos compartidos
  * - getters y setters compartidos
  * - lógica común como toString()
  */
+
 public abstract class Articulo extends Object {
 
     private int codigo;
@@ -28,11 +18,7 @@ public abstract class Articulo extends Object {
     private double precio;
     private Categoria categoria;
 
-    /*
-     * Constructor de la clase padre.
-     *
-     * Las clases hijas usarán super(...) para inicializar estos atributos comunes.
-     */
+    //Constructor de la clase padre
     public Articulo(int codigo, String nombre, double precio, Categoria categoria) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -72,36 +58,19 @@ public abstract class Articulo extends Object {
         this.categoria = categoria;
     }
 
-    /*
-     * Método abstracto.
-     *
-     * Obliga a cada clase hija o subclase a decir qué tipo de artículo es.
+    /* Método abstracto
+     * Obliga a cada clase hija o subclase a decir qué tipo de artículo es
      */
     public abstract String getTipoArticulo();
 
-    /*
-     * Método abstracto.
-     *
-     * Obliga a cada subclase a devolver su detalle específico.
-     * Esto sirve para no meter toda la lógica en la clase padre.
+    /* Método abstracto.
+     * Obliga a cada subclase a devolver su detalle específico
+     * Esto sirve para no meter toda la lógica en la clase padre
      */
     public abstract String getDetalleEspecifico();
 
-    /*
-     * toString()
-     * --------------------------------------------------
-     * Este método es ideal para explicar:
-     * - cómo mostrar un objeto de manera legible
-     * - cómo aprovechar datos comunes
-     * - cómo usar métodos abstractos dentro de una implementación común
-     *
-     * Observá que acá usamos getTipoArticulo() y getDetalleEspecifico().
-     * Esos métodos los resolverá cada clase hija.
-     *
-     * Eso es polimorfismo.
-     * es la capacidad de un mismo methodo (toString()) de comportarse de manera diferente según la clase que lo implemente.
-     * poli muchos
-     * morfismo formas
+    /* toString()
+     * Este método es para mostrar un objeto de manera legible
      */
     @Override
     public String toString() {

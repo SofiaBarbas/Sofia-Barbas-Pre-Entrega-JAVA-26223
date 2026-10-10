@@ -1,13 +1,15 @@
-package com.techlab.articulo.model;
+package com.techlab.articulo;
+import com.techlab.categoria.Categoria;
 
 /*
  * CLASE ARTICULOALIMENTICIO
  * --------------------------------------------------
- * Esta clase también hereda de Articulo.
+ * Esta clase hereda de Articulo.
  *
  * Agrega como dato propio:
  * - días para vencimiento
  */
+
 public class ArticuloAlimenticio extends Articulo {
 
     private int diasParaVencimiento;
@@ -25,8 +27,8 @@ public class ArticuloAlimenticio extends Articulo {
     public void setDiasParaVencimiento(int diasParaVencimiento) {
         this.diasParaVencimiento = diasParaVencimiento;
     }
-     // estos dos methdos son abstractos en la clase padre, por eso los implementamos acá. cada clase hija tiene su propia implementación.
-     // y esta obligada a implementarlo. 
+
+    //implementa el metodo abstracto de la clase padre
     @Override
     public String getTipoArticulo() {
         return "Alimenticio";
